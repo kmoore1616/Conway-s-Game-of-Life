@@ -18,7 +18,7 @@ help_txt = ["There are two modes and a help screen.",
             "Special Keys:","[h] - Open and closes help menu", "[esc] - Switches between edit and run mode",
             "[space] - Adds or removes cells in edit mode", "[del] - Clears all live cells in edit mode",
             "[s] - Changes the size of cells", "[c] - Changes the color of cells", "[q] - Changes game speed",
-            "[g] - Toggles Grid lines", "Created by Kyle Moore - 3/28/23"]
+            "[g] - Toggles Grid lines. Note: Gridlines on small and fine may cause performance issues", "Created by Kyle Moore - 3/28/23"]
 
 intro_txt = "Welcome to Conway's game of Life!"
 live_counter = 0
@@ -44,7 +44,7 @@ s_pressed = False # Game size
 c_pressed = False # Cell color
 q_pressed = False # Game Speed
 h_presed = False # Help Menu
-g_pressed = False
+g_pressed = False # Grid Lines
 
 
 def wipe():
@@ -279,30 +279,31 @@ while run:
 
 
     # Text
-    font = pygame.font.SysFont(None, 15)
-    title_font = pygame.font.SysFont(None, 30)
-    size = font.render(rect_mode, True, (255, 255, 255))
-    speed = font.render(speed_mode, True, (255, 255, 255))
-    grid = font.render(grid_mode, True, (255, 255, 255))
+    font = pygame.font.SysFont(None, 30)
+    font1 = pygame.font.SysFont(None, 15)
+    title_font = pygame.font.SysFont(None, 45)
+    
+    size = font1.render(rect_mode, True, (255, 255, 255))
+    speed = font1.render(speed_mode, True, (255, 255, 255))
+    grid = font1.render(grid_mode, True, (255, 255, 255))
     
     
     if mode == 'help':
         intro = title_font.render(intro_txt, True, (0, 255, 255))
-        win.blit(intro, ((1280/2 - 150) - 50, 15))
+        win.blit(intro, ((1280/2 - 200) - 50, 15))
         for text in range(len(help_txt)):
             help = font.render(help_txt[text], True, (0, 255, 0))
-            win.blit(help, (60, 60 + (10*text)))
+            win.blit(help, (60, 60 + (22*text)))
             
     if not mode == 'help':
         win.blit(size, (10, 710))
-        win.blit(speed, (80, 710))
+        win.blit(speed, (70, 710))
         win.blit(grid, (150, 710))
         
 
     # Draws and updates the screen
     if not mode == 'help':
         for row in range(num_rows):
-            
             for col in range(num_columns):
                 if life_tracker[row][col]:
                     pygame.draw.rect(win, color, (col * rect_size, row * rect_size, rect_size, rect_size))
