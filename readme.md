@@ -1,4 +1,7 @@
 # Conways Game Of Life!</br>
+## Description
+A simple implementation of the famous game, Conways Game of Life (https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)</br>
+Written in python by Kyle Moore https://www.linkedin.com/in/moore-kyle-r/
 ## How to Install
 Needs pygame installed (pip install pygame)</br>
 Then just run "python3 conways_game.py" in the download directory
