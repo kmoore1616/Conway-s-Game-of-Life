@@ -1,10 +1,10 @@
 # Conways Game Of Life!</br>
 ## How to Install
-Needs pygame installed (pip install pygame)
+Needs pygame installed (pip install pygame)</br>
 Then just run "python3 conways_game.py" in the download directory
 
 ## How To Play
-There are two modes and a help screen. </br>
+There are two modes and a help screen. Press 'h' to exit help screen and 'esc' to toggle between edit and run modes</br>
 In edit mode use the arrow keys to control the red cursor and space to add or remove 'live' cells.</br>
 In run mode sit back and watch your creation. The speed of the sim may be changed during both edit & run modes.</br>
 Special Keys:","[h] - Open and closes help menu", "[esc] - Switches between edit and run mode.</br>
